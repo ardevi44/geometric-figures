@@ -1,8 +1,9 @@
 :root {
   --white: #FFF;
-  --medium-text: 2rem;
-  --large-text: 2.2rem;
-  --bold-text: bold;
+  --large-text: 2.3rem;
+  --regular-weight: 500;
+  --medium-text: 2.2rem;
+  --bold-weight: 700;
   --medium-white-opacity: rgba(255, 255, 255, 0.47);
 }
 
@@ -18,10 +19,12 @@ html {
 
 body {
   background: linear-gradient(180deg, #AE1DE1 15.47%, rgba(27, 69, 219, 0.83) 99.69%);
-  background-attachment: fixed; /* El background se quede fijo y no se mueve al hacer zoom */
+  /* El background se quede fijo y no se mueve al hacer zoom */
+  background-attachment: fixed;
   font-family: 'Rajdhani', sans-serif;
+  font-size: var(--medium-text);
+  font-weight: var(--regular-weight);
   color: var(--white);
-  font-weight: 400;
 }
 
 .mw-352px {
@@ -61,7 +64,6 @@ body {
 .instructions {
   grid-column: 1 / 5;
   grid-row: 1 / 2;
-  font-size: 2rem;
   line-height: 2.6rem;
 }
 
@@ -77,20 +79,20 @@ body {
   border: .3rem solid var(--white);
   border-radius: 2rem;
   line-height: 1.1rem;
-  font-size: var(--medium-text);
 }
 
 .card__title {
-  font-size: var(--large-text);
-  font-weight: 400;
   grid-column: 4 / 6;
   grid-row: 1 / 2;
   place-self: end;
+  font-size: var(--large-text);
+  font-weight: 400;
   color: var(--medium-white-opacity);
 }
 
 .label {
   place-self: center start;
+  font-size: var(--large-text);
 }
 
 input[type="text"] {
@@ -103,15 +105,20 @@ input[type="text"] {
   border: .1rem solid var(--white);
   border-radius: 3px;
   color: var(--white);
-  font-size: 2rem;
+  font-size: var(--medium-text);
+  font-weight: var(--regular-weight);
   font-family: 'Rajdhani', sans-serif;
   text-align: center;
 }
 
+.input:focus {
+  outline: none;
+}
+
 .input_readonly {
   border: none;
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: var(--large-text);
+  font-weight: var(--bold-weight);
   text-align: left;
 }
 
@@ -121,16 +128,15 @@ input[type="text"] {
   align-items: center;
   background: rgba(255, 255, 255, 0.22);
   border-radius: 4px;
-  font-size: 1.6rem;
   padding: .5rem;
   border: none;
   color: var(--white)
 }
 
 .result-button__text {
-  font-size: 1.6rem;
+  font-size: var(--medium-text);
   font-family: 'Rajdhani', sans-serif;
-  font-weight: 700;
+  font-weight: var(--bold-weight);
 }
 
 .perimeter__value {
