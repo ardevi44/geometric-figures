@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figuras Geométricas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="main-header__container mw-352px">
+      <img src="./assets/img/logo.png" alt="Geometric figures logo">
+      <h1 class="main-header__title">Figuras Geométricas</h1>
+    </div>
+  </header>
+  <div class="main-container">
+    <p class="instructions">Ingresa los datos de tu figura para calcular su perimétro y su área.</p>
+    <section class="square-card card">
+      <h2 class="card__title">Cuadrado</h2>
+      <p class="square-base__label label">Base</p>
+      <input class="square-base__input input" type="number"/>
+      <input class="perimeter__value input input_readonly" type="text" value="0.00" readonly/>
+      <p class="perimeter-label">Perímetro</p>
+      <input class="area-value input input_readonly" type="text" value="0.00" readonly/>
+      <p class="area-label">Área</p>
+      <button class="square-result-button result-button" type="button"><span class="result-button__text">Calcular</span></button>
+    </section>
+    <section class="triangle-card card">
+      <h2 class="card__title">Triángulo</h2>
+      <p class="triangle-base__label label">Base</p>
+      <input class="triangle-base__input input" type="number"/>
+      <p class="triangle-side1__label label">Lado1</p>
+      <input class="triangle-side1__input input" type="number"/>
+      <p class="triangle-side2__label label">Lado2</p>
+      <input class="triangle-side2__input input" type="number"/>
+      <p class="triangle-height__label label">Altura</p>
+      <input class="triangle-height__input input" type="number">
+      <input class="perimeter__value input input_readonly" type="text" value="0.00" readonly/>
+      <p class="perimeter-label">Perímetro</p>
+      <input class="area-value input input_readonly" type="text" value="0.00" readonly/>
+      <p class="area-label">Área</p>
+      <button class="triangle-result-button result-button" type="button"><span class="result-button__text">Calcular</span></button>
+    </section>
+    <section class="circle-card card">
+      <h2 class="card__title">Círculo</h2>
+      <p class="circle-radius__label label">Radio</p>
+      <input class="circle-radius__input input" type="number"/>
+      <input class="perimeter__value input input_readonly" type="text" value="0.00" readonly/>
+      <p class="perimeter-label">Perímetro</p>
+      <input class="area-value input input_readonly" type="text" value="0.00" readonly/>
+      <p class="area-label">Área</p>
+      <button class="circle-result-button result-button" type="button"><span class="result-button__text">Calcular</span></button>
+    </section>
+  </div>
+  <footer class="love-footer">
+    <p>Hecho con ❤ por</p>
+    <a class="love-footer__link" href="https://github.com/Arbey-Do" target="_blank">Arbey-Do</a>
+    <a href="https://github.com/Arbey-Do" target="_blank">
+      <img class="love-footer__icon" src="./assets/img/github.png" alt="Github Icon">
+    </a>
+  </footer>
+</body>
+</html>
