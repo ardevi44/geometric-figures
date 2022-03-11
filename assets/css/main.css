@@ -133,6 +133,10 @@ input[type="text"] {
   color: var(--white)
 }
 
+.result-button:active {
+  background: rgba(255, 255, 255, 0.32);
+}
+
 .result-button__text {
   font-size: var(--medium-text);
   font-family: 'Rajdhani', sans-serif;
@@ -168,7 +172,7 @@ input[type="text"] {
 .square-card {
   grid-column: 1 / 5;
   grid-row: 2 / 4;
-  background-image: url(./assets/img/square-background.svg);
+  background-image: url(../img/square-background.svg);
   background-repeat: no-repeat;
   background-size: 156.76px 129.76px;
   background-position: 3% 100%;
@@ -194,7 +198,7 @@ input[type="text"] {
 .triangle-card {
   grid-column: 1 / 5;
   grid-row: 4 / 6;
-  background-image: url(./assets/img/triangle-background.svg);
+  background-image: url(../img/triangle-background.svg);
   background-repeat: no-repeat;
   background-size: 144.76px 129.76px;
   background-position: 7% 100%;
@@ -250,7 +254,7 @@ input[type="text"] {
 .circle-card {
   grid-column: 1 / 5;
   grid-row: 6 / 8;
-  background-image: url(./assets/img/circle-background.svg);
+  background-image: url(../img/circle-background.svg);
   background-repeat: no-repeat;
   background-size: 144.76px 128.76px;
   background-position: 5% 100%;
