@@ -35,18 +35,20 @@
     <section class="triangle-card card">
       <h2 class="card__title">Triángulo</h2>
       <p class="triangle-base__label label">Base</p>
-      <input class="triangle-base__input input" type="number"/>
+      <input id="triangle-base-input" class="triangle-base__input input" type="number"/>
       <p class="triangle-side1__label label">Lado1</p>
-      <input class="triangle-side1__input input" type="number"/>
+      <input id="triangle-side1-input" class="triangle-side1__input input" type="number"/>
       <p class="triangle-side2__label label">Lado2</p>
-      <input class="triangle-side2__input input" type="number"/>
+      <input id="triangle-side2-input" class="triangle-side2__input input" type="number"/>
       <p class="triangle-height__label label">Altura</p>
-      <input class="triangle-height__input input" type="number">
-      <input class="perimeter__value input input_readonly" type="text" value="0.00" readonly/>
+      <input id="triangle-height-input" class="triangle-height__input input" type="number">
+      <input id="triangle-perimeter-output" class="perimeter__value input input_readonly" type="text" value="0 cm" readonly/>
       <p class="perimeter-label">Perímetro</p>
-      <input class="area-value input input_readonly" type="text" value="0.00" readonly/>
+      <input id="triangle-area-output" class="area-value input input_readonly" type="text" value="0 cm²" readonly/>
       <p class="area-label">Área</p>
-      <button class="triangle-result-button result-button" type="button"><span class="result-button__text">Calcular</span></button>
+      <button id="triangle-calculate-btn" class="triangle-result-button result-button" type="button">
+        <span id="triangle-btn-text" class="result-button__text">Calcular</span>
+      </button>
     </section>
     <section class="circle-card card">
       <h2 class="card__title">Círculo</h2>
