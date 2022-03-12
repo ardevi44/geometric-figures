@@ -3,9 +3,10 @@ const cmMeasure = 'cm'
 const sqMeasure = 'cm²'
 // PI value
 const PI = Math.PI.toFixed(4)
-// Is a new try
-let rectangleNewCalculate = false
+// new try
+let squareNewCalculate = false
 let triangleNewCalculate = false
+let circleNewCalculate = false
 
 
 // SQUARE VARIABLES
@@ -23,6 +24,12 @@ const trianglePerimeterOutput = document.querySelector('#triangle-perimeter-outp
 const triangleAreaOutput = document.querySelector('#triangle-area-output')
 const triangleBtn = document.querySelector('#triangle-calculate-btn')
 const triangleBtnText = document.querySelector('#triangle-btn-text')
+// CIRCLE VARIABLES
+const circleRadiusInput = document.querySelector('#circle-radius-input')
+const circlePerimeterOutput = document.querySelector('#circle-perimeter-output')
+const circleAreaOutput = document.querySelector('#circle-area-output')
+const circleBtn = document.querySelector('#circle-calculate-btn')
+const circleBtnText = document.querySelector('#circle-btn-text')
 
 // UTILITIES
 const decimalIntegerResult = result => {
@@ -30,19 +37,19 @@ const decimalIntegerResult = result => {
   return result
 }
 
-const changeBtnText = (newTry, btn) => {
-  if(!newTry) {
-    btn.innerText = "Nuevo valor"
-  } else {
-    btn.innerText = "Calcular"
-  }
+const changeBtnText = (newCalculate, btnText) => {
+  if(!newCalculate) btnText.innerText = "De nuevo"
+  else btnText.innerText = "Calcular"
 }
 
-// FIGURE FUNCTIONS
+// FIGURE MATH FUNCTIONS
 const squarePerimeter = base => decimalIntegerResult(base * 4)
 const squareArea = base => decimalIntegerResult(Math.pow(base, 2))
 const trianglePerimeter = (base, side1, side2) => decimalIntegerResult(base + side1 + side2)
 const triangleArea = (base, height) => decimalIntegerResult((base * height) / 2)
+const circleDiameter = radius => decimalIntegerResult(radius * 2)
+const circlePerimeter = radius => decimalIntegerResult(PI * circleDiameter(radius))
+const circleArea = radius => decimalIntegerResult(PI * Math.pow(radius, 2))
 
 // SQUARE BUTTON EVENTS
 const recalculateSquareResults = () => {
@@ -51,14 +58,14 @@ const recalculateSquareResults = () => {
   squareAreaOutput.value = `0 ${sqMeasure}`
   squareBaseInput.disabled = false
   squareBaseInput.focus()
-  rectangleNewCalculate = false
-  squareBtnText.innerText = "Calcular"
+  changeBtnText(squareNewCalculate, squareBtnText)
+  squareNewCalculate = false
 }
 
 const calculateSquareResults = (event) => {
   event.preventDefault()
-  if (!squareBaseInput.value) return 
-  if (rectangleNewCalculate) {
+  if (!squareBaseInput.value) return
+  if (squareNewCalculate) {
     recalculateSquareResults()
     return
   }
@@ -66,8 +73,8 @@ const calculateSquareResults = (event) => {
   squarePerimeterOutput.value = `${squarePerimeter(squareBase)} ${cmMeasure}`
   squareAreaOutput.value = `${squareArea(squareBase)} ${sqMeasure}`
   squareBaseInput.disabled = true
-  squareBtnText.innerText = "Nuevo valor"
-  rectangleNewCalculate = true
+  changeBtnText(squareNewCalculate, squareBtnText)
+  squareNewCalculate = true
 }
 
 // TRIANGLE BUTTON EVENTS
@@ -83,8 +90,8 @@ const recalculateTriangleResults = () => {
   trianglePerimeterOutput.value = `0 ${cmMeasure}`
   triangleAreaOutput.value = `0 ${sqMeasure}`
   triangleBaseInput.focus()
-  triangleNewCalculate = false
   changeBtnText(triangleNewCalculate, triangleBtnText)
+  triangleNewCalculate = false
 }
 
 const calculateTriangleResults = (event) => {
@@ -116,11 +123,32 @@ const calculateTriangleResults = (event) => {
   triangleNewCalculate = true
 }
 
+// CIRCLE BUTTON EVENTS
+const recalculateCircleResults = () => {
+  circleRadiusInput.value = ''
+  circlePerimeterOutput.value = `0 ${cmMeasure}`
+  circleAreaOutput.value = `0 ${sqMeasure}`
+  circleRadiusInput.disabled = false
+  circleRadiusInput.focus()
+  changeBtnText(circleNewCalculate, circleBtnText)
+  circleNewCalculate = false
+}
+
+const calculateCircleResults = (event) => {
+  event.preventDefault()
+  if (!circleRadiusInput.value) return
+  if (circleNewCalculate) {
+    recalculateCircleResults()
+    return
+  }
+  const circleRadius = Number(circleRadiusInput.value)
+  circlePerimeterOutput.value = `${circlePerimeter(circleRadius)} ${cmMeasure}`
+  circleAreaOutput.value = `${circleArea(circleRadius)} ${sqMeasure}`
+  circleRadiusInput.disabled = true
+  changeBtnText(circleNewCalculate, circleBtnText)
+  circleNewCalculate = true
+}
+
 squareBtn.addEventListener('click', calculateSquareResults)
 triangleBtn.addEventListener('click', calculateTriangleResults)
-
-// LOGIC PENDING ...
-
-// const circleDiameter = (radius) =>  radius * 2
-// const circlePerimeter = () => `${(PI * circleDiameter()).toFixed(2)} ${cmMeasure}`
-// const circleArea = (radius) => `${(PI * Math.pow(radius, 2)).toFixed(2)} ${squareMeasure}`
+circleBtn.addEventListener('click', calculateCircleResults)

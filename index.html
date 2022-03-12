@@ -53,12 +53,14 @@
     <section class="circle-card card">
       <h2 class="card__title">Círculo</h2>
       <p class="circle-radius__label label">Radio</p>
-      <input class="circle-radius__input input" type="number"/>
-      <input class="perimeter__value input input_readonly" type="text" value="0.00" readonly/>
+      <input id="circle-radius-input" class="circle-radius__input input" type="number"/>
+      <input id="circle-perimeter-output" class="perimeter__value input input_readonly" type="text" value="0 cm" readonly/>
       <p class="perimeter-label">Perímetro</p>
-      <input class="area-value input input_readonly" type="text" value="0.00" readonly/>
+      <input id="circle-area-output" class="area-value input input_readonly" type="text" value="0 cm²" readonly/>
       <p class="area-label">Área</p>
-      <button class="circle-result-button result-button" type="button"><span class="result-button__text">Calcular</span></button>
+      <button id="circle-calculate-btn" class="circle-result-button result-button" type="button">
+        <span id="circle-btn-text" class="result-button__text">Calcular</span>
+      </button>
     </section>
   </div>
   <footer class="love-footer">
